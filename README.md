@@ -19,6 +19,8 @@ Automatic Cat Feeder adalah solusi modern untuk memastikan kucing kesayangan And
 | Dispenser Makanan | Menampung dan mengalirkan makanan kucing |
 | Aplikasi Blynk | Remote kontrol via smartphone               |
 
+---
+
 ## 🔌 Wiring Diagram
 
 Berikut adalah diagram sambungan antara ESP32 dan Servo Motor:
@@ -30,6 +32,7 @@ Berikut adalah diagram sambungan antara ESP32 dan Servo Motor:
   <img src="servo_motor_966r.jpeg" alt="Block Diagram" width="600" height="550">
 
 </div>
+---
 
 ## 🛠️ Instalasi
 
@@ -160,12 +163,16 @@ void loop() {
 
 5. Gunakan Blynk App dan Web UI untuk memberi makan.
 
+---
+
 ## 🌐 Web Interface
 
 Setelah ESP32 terhubung ke WiFi, Anda dapat mengakses kontrol manual servo via browser:
 ```
 http://<alamat_IP_ESP32>
 ```
+
+---
 
 ## 📱 Kontrol Blynk
 
