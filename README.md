@@ -1,4 +1,4 @@
-# 🐾 Automatic Cat Feeder ESP32
+# 🐾 Automatic Cat Feeder
 
 Automatic Cat Feeder adalah solusi modern untuk memastikan kucing kesayangan Anda tetap mendapatkan asupan makanannya secara tepat waktu, bahkan ketika Anda sibuk atau sedang tidak di rumah. Sistem ini mengintegrasikan teknologi ESP32, kontrol servo motor, dan aplikasi Blynk untuk pengoperasian otomatis dan manual melalui internet.
 
@@ -28,31 +28,6 @@ Automatic Cat Feeder adalah solusi modern untuk memastikan kucing kesayangan And
    - `WiFi` (default ESP32)
 
 2. Upload kode dari file `cat_feeder.ino` ke board ESP32 Anda.
-
-3. Jalankan dan koneksikan WiFi melalui portal otomatis dari ESP32 (`SSID: PET_FEEDER`).
-
-4. Gunakan Blynk App dan Web UI untuk memberi makan.
-
-## 🌐 Web Interface
-
-Setelah ESP32 terhubung ke WiFi, Anda dapat mengakses kontrol manual servo via browser:
-```
-http://<alamat_IP_ESP32>
-```
-
-## 📱 Kontrol Blynk
-
-- Virtual Pin: `V0`
-- Tombol ON/OFF untuk mengaktifkan/mematikan servo selama 5 detik
-
-## 💬 Credit
-
-Proyek ini dibuat oleh Muhammad Anwar Lain dan tim.  
-Institut: Global Institute
-
-
----
-
 ## 🧾 Source Code (`cat_feeder.ino`)
 
 ```cpp
@@ -168,3 +143,27 @@ void loop() {
 }
 
 ```
+
+4. Jalankan dan koneksikan WiFi melalui portal otomatis dari ESP32 (`SSID: PET_FEEDER`).
+
+5. Gunakan Blynk App dan Web UI untuk memberi makan.
+
+## 🌐 Web Interface
+
+Setelah ESP32 terhubung ke WiFi, Anda dapat mengakses kontrol manual servo via browser:
+```
+http://<alamat_IP_ESP32>
+```
+
+## 📱 Kontrol Blynk
+
+- Virtual Pin: `V0`
+- Tombol ON/OFF untuk mengaktifkan/mematikan servo selama 5 detik
+
+## 💬 Credit
+
+Proyek ini dibuat oleh Muhammad Anwar Lain dan tim.  
+Institut: Global Institute
+
+
+---
