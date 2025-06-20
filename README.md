@@ -163,7 +163,7 @@ http://<alamat_IP_ESP32>
 ## 💬 Credit
 
 Proyek ini dibuat oleh Muhammad Anwar Lain dan tim.  
-Institut: Global Institute
+Untuk memenuhi Tugas UAS di Kampus Global Institute
 
 
 ---
