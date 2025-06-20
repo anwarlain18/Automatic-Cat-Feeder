@@ -27,7 +27,7 @@ Berikut adalah diagram sambungan antara ESP32 dan Servo Motor:
 
 <div style="display: flex; justify-content: center; gap: 20px;">
 
-  <img src="wiring_diagram.jpeg" alt="Wiring Diagram" width="400" height="550">
+  <img src="wiring_diagram.jpeg" alt="Wiring Diagram" width="450" height="550">
 
   <img src="servo_motor_966r.jpeg" alt="Block Diagram" width="450" height="400">
 
