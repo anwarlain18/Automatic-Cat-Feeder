@@ -179,9 +179,13 @@ http://<alamat_IP_ESP32>
 - Virtual Pin: `V0`
 - Tombol ON/OFF untuk mengaktifkan/mematikan servo selama 5 detik
 
+---
+
 ## 💬 Credit
 
 Proyek ini dibuat Untuk memenuhi Tugas UAS di Kampus Global Institute
+
+---
 
 ## 👥 Nama Kelompok
 
@@ -190,6 +194,5 @@ Proyek ini dibuat Untuk memenuhi Tugas UAS di Kampus Global Institute
 - 👩‍💻 Lestari Tegari Ningsih  
 - 🧑‍💻 Muhammad Anwar Lain  
 - 🧑‍💻 Rakha Ananta Hugo Riyadi
-
 
 ---
