@@ -19,6 +19,12 @@ Automatic Cat Feeder adalah solusi modern untuk memastikan kucing kesayangan And
 | Dispenser Makanan | Menampung dan mengalirkan makanan kucing |
 | Aplikasi Blynk | Remote kontrol via smartphone               |
 
+## 🔌 Wiring Diagram
+
+Berikut adalah diagram sambungan antara ESP32 dan Servo Motor:
+
+![Wiring Diagram](wiring%20diagram.jpeg)
+
 ## 🛠️ Instalasi
 
 1. Pasang library berikut di Arduino IDE:
