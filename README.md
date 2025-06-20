@@ -23,7 +23,13 @@ Automatic Cat Feeder adalah solusi modern untuk memastikan kucing kesayangan And
 
 Berikut adalah diagram sambungan antara ESP32 dan Servo Motor:
 
-<img src="wiring_diagram.jpeg" alt="Wiring Diagram" width="400" height="550">
+<div style="display: flex; justify-content: center; gap: 20px;">
+
+  <img src="wiring_diagram.jpeg" alt="Wiring Diagram" width="400" height="550">
+
+  <img src="servo_motor966r.jpeg" alt="Block Diagram" width="400" height="550">
+
+</div>
 
 ## 🛠️ Instalasi
 
