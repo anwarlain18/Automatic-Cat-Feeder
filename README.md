@@ -174,8 +174,15 @@ http://<alamat_IP_ESP32>
 
 ## 💬 Credit
 
-Proyek ini dibuat oleh Muhammad Anwar Lain dan tim.  
-Untuk memenuhi Tugas UAS di Kampus Global Institute
+Proyek ini dibuat Untuk memenuhi Tugas UAS di Kampus Global Institute
+
+## 👥 Nama Kelompok
+
+- 🧑‍💻 Andyan Rizki F  
+- 🧑‍💻 Muhammad Rama Nurhuda  
+- 👩‍💻 Lestari Tegari Ningsih  
+- 🧑‍💻 Muhammad Anwar Lain  
+- 🧑‍💻 Rakha Ananta Hugo Riyadi
 
 
 ---
