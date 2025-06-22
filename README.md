@@ -2,6 +2,8 @@
 
 Automatic Cat Feeder adalah solusi modern untuk memastikan kucing kesayangan Anda tetap mendapatkan asupan makanannya secara tepat waktu, bahkan ketika Anda sibuk atau sedang tidak di rumah. Sistem ini mengintegrasikan teknologi ESP32, kontrol servo motor, dan aplikasi Blynk untuk pengoperasian otomatis dan manual melalui internet.
 
+🔽 **[Download Catalog](https://bit.ly/IoT-CN)**
+
 ## 📌 Fitur
 
 - ✅ Memberi makan kucing secara otomatis dengan durasi tertentu
