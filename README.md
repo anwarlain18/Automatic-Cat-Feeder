@@ -56,52 +56,59 @@ Berikut adalah diagram sambungan antara ESP32 dan Servo Motor:
 #include <WiFiClient.h>
 #include <BlynkSimpleEsp32.h>
 #include <ESP32Servo.h>
-#include <WiFiManager.h>
+#include <WiFiManager.h>  
 
+// Servo setup
 Servo myservo;
 const int servoPin = 13;
 int servoAngle = 90;
 
+// Status variabel
 int StatusPakan = 0;
 int lastStatusPakan = -1;
 unsigned long waktuPakanMulai = 0;
 bool timerAktif = false;
-const unsigned long durasiPakan = 5000;
+const unsigned long durasiPakan = 5000; // 5 Detik
 
+// Web Server
 WiFiServer server(80);
 
 void setup() {
   Serial.begin(115200);
+
   WiFiManager wm;
-  wm.resetSettings();
+  wm.resetSettings(); // Paksa AP mode
   bool res = wm.autoConnect("PET_FEEDER");
 
   if (!res) {
-    Serial.println("Gagal konek ke WiFi.");
+    Serial.println("Gagal konek ke WiFi. Masuk ke AP Mode...");
     delay(3000);
     ESP.restart();
   }
 
-  Serial.print("IP ESP32: http://");
+  Serial.println("WiFi Connected.");
+  Serial.print("ESP32 IP address: http://");
   Serial.println(WiFi.localIP());
 
   Blynk.begin(BLYNK_AUTH_TOKEN, WiFi.SSID().c_str(), WiFi.psk().c_str());
-  server.begin();
+  Serial.println("Blynk Connected.");
 
+  server.begin();
   myservo.attach(servoPin);
   myservo.write(servoAngle);
 }
 
-void BeriPakan() {
-  myservo.write(180);
+// Tambahan: sinkronisasi Automation
+BLYNK_CONNECTED() {
+  Blynk.syncVirtual(V0);  // Penting agar automation trigger saat koneksi awal
 }
 
-void MatikanPakan() {
-  myservo.write(0);
-}
-
+// Handler dari Automation / Manual button
 BLYNK_WRITE(V0) {
   StatusPakan = param.asInt();
+  Serial.print("BLYNK_WRITE V0 triggered: ");
+  Serial.println(StatusPakan);
+  
   if (StatusPakan == 1) {
     BeriPakan();
     waktuPakanMulai = millis();
@@ -112,6 +119,14 @@ BLYNK_WRITE(V0) {
   }
 }
 
+void BeriPakan() {
+  myservo.write(180);
+}
+
+void MatikanPakan() {
+  myservo.write(0);
+}
+
 void loop() {
   Blynk.run();
 
@@ -119,16 +134,17 @@ void loop() {
     StatusPakan = 0;
     MatikanPakan();
     Blynk.virtualWrite(V0, 0);
-    Serial.println("Pakan otomatis dimatikan setelah 5 detik.");
+    Serial.println("Otomatis OFF setelah 5 detik");
     timerAktif = false;
   }
 
   if (StatusPakan != lastStatusPakan) {
-    Serial.print("Status Pakan: ");
+    Serial.print("Status Pakan : ");
     Serial.println(StatusPakan);
     lastStatusPakan = StatusPakan;
   }
 
+  // Web control via slider
   WiFiClient client = server.available();
   if (client) {
     String request = client.readStringUntil('\r');
@@ -147,13 +163,33 @@ void loop() {
     client.println("Content-type:text/html");
     client.println();
 
-    client.println("<!DOCTYPE html><html><head><meta name='viewport' content='width=device-width, initial-scale=1'>");
-    client.println("<style>body { background:#0f172a; color:#f1f5f9; font-family:Segoe UI; text-align:center; padding-top:50px; } .slider { width:80%; } h1 { color:#38bdf8; } .footer { position:fixed; bottom:10px; width:100%; font-weight:bold; color:#60a5fa; }</style></head>");
-    client.println("<body><h1>ESP32 Servo Control</h1>");
-    client.print("<p>Angle: <span id='val'>"); client.print(servoAngle); client.println("</span>°</p>");
-    client.print("<input type='range' min='0' max='180' value='"); client.print(servoAngle); client.println("' class='slider' id='servoRange'>");
-    client.println("<script>let slider=document.getElementById('servoRange');let val=document.getElementById('val');slider.oninput=function(){val.innerHTML=this.value;fetch('/servo?angle='+this.value);}</script>");
-    client.println("<div class='footer'>Global Institute</div></body></html>");
+    client.println("<!DOCTYPE html><html>");
+    client.println("<head><meta name='viewport' content='width=device-width, initial-scale=1'>");
+    client.println("<style>");
+    client.println("body { background-color: #0f172a; color: #f1f5f9; font-family: 'Segoe UI', sans-serif; text-align: center; padding-top: 50px; }");
+    client.println(".slider { width: 80%; }");
+    client.println("h1 { color: #38bdf8; }");
+    client.println(".footer { position: fixed; bottom: 10px; width: 100%; text-align: center; font-weight: bold; color: #60a5fa; font-size: 16px; }");
+    client.println("</style></head>");
+    
+    client.println("<body>");
+    client.println("<h1>ESP32 Servo Control</h1>");
+    client.print("<p>Angle: <span id='val'>");
+    client.print(servoAngle);
+    client.println("</span>°</p>");
+    client.println("<input type='range' min='0' max='180' value='" + String(servoAngle) + "' class='slider' id='servoRange'>");
+
+    client.println("<script>");
+    client.println("let slider = document.getElementById('servoRange');");
+    client.println("let val = document.getElementById('val');");
+    client.println("slider.oninput = function() {");
+    client.println("val.innerHTML = this.value;");
+    client.println("fetch('/servo?angle=' + this.value);");
+    client.println("}");
+    client.println("</script>");
+
+    client.println("<div class='footer'>Global Institute</div>");
+    client.println("</body></html>");
 
     client.stop();
   }
