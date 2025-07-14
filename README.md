@@ -10,7 +10,7 @@ Automatic Cat Feeder adalah solusi modern untuk memastikan kucing kesayangan And
 - ✅ Kontrol manual melalui aplikasi Blynk
 - ✅ Web UI kontrol sudut servo via WiFi
 - ✅ Sistem konfigurasi WiFi otomatis (WiFiManager)
-- ✅ Desain antarmuka web minimalis dan responsif
+- ✅ Material Dispenser Kuat dan Tahan Lama
 
 ## 🧩 Komponen yang Digunakan
 
