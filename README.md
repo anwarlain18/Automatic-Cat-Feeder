@@ -37,7 +37,7 @@ Berikut adalah diagram sambungan antara ESP32 dan Servo Motor:
 ## ➡️ Flow Chart
 <details><summary>See Screenshots</summary>
 
-![]<img src="flowchart_app.jpeg" alt="Flowchart" width="500" height="550">
+<img src="flowchart_app.jpeg" alt="Flowchart" width="500" height="550">
 
 </details>
 
