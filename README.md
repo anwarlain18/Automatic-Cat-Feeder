@@ -214,13 +214,12 @@ http://<alamat_IP_ESP32>
 
 ## 📱 Kontrol Blynk
 
-<div style="display: flex; justify-content: center; gap: 20px;">
+<details><summary>See Screenshots</summary>
 
-  <img src="blynk_manual_switch.PNG" alt="Manual button" width="450" height="550">
+![]<img src="blynk_manual_switch.PNG" alt="Manual button" width="450" height="550">
+![]<img src="blynk_automation_dashboard.PNG" alt="Automation" width="450" height="400">
 
-  <img src="blynk_automation_dashboard.PNG" alt="Automation" width="450" height="400">
-
-</div>
+</details>
 
 - Virtual Pin: `V0`
 - Tombol ON/OFF untuk mengaktifkan/mematikan servo 
