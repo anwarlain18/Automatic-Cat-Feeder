@@ -29,8 +29,8 @@ Berikut adalah diagram sambungan antara ESP32 dan Servo Motor:
 
 <details><summary>See Screenshots</summary>
 
-![]<img src="wiring_diagram.jpeg" alt="Wiring Diagram" width="450" height="550">
-![]<img src="servo_motor_966r.jpeg" alt="Block Diagram" width="450" height="400">
+<img src="wiring_diagram.jpeg" alt="Wiring Diagram" width="450" height="550">
+<img src="servo_motor_966r.jpeg" alt="Block Diagram" width="450" height="400">
 
 </details>
 
@@ -221,8 +221,8 @@ http://<alamat_IP_ESP32>
 
 <details><summary>See Screenshots</summary>
 
-![]<img src="blynk_manual_switch.PNG" alt="Manual button" width="450" height="550">
-![]<img src="blynk_automation_dashboard.PNG" alt="Automation" width="450" height="400">
+<img src="blynk_manual_switch.PNG" alt="Manual button" width="450" height="550">
+<img src="blynk_automation_dashboard.PNG" alt="Automation" width="450" height="400">
 
 </details>
 
